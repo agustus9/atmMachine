@@ -28,7 +28,7 @@ namespace atmMachine
             return true;
         }
 
-        public void showAccountInfo() {
+        public void showAccountInfo(string name, double balance) {
             string message = "The account ID: " + this.id;
             this.message(message);
 

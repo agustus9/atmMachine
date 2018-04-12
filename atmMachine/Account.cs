@@ -8,45 +8,17 @@ namespace atmMachine
 {
     class Account
     {
-        string name; //-name(string)
-        string id;   //-id(String)
-        double balance;  //-balance(double)
+        public double Balance { get; set; }
 
-
-        static int count;  //-static int count;
-
-        public Account() {
-            // empty contructor
-        }
-        public Account( string name, double initBalance)  //+idcontructor/generator (name,initial balance)
+        public double Deposit(double amount)
         {
-            this.name = name;
-            this.balance = initBalance;
-            this.id = this.generateID();
+            Balance += amount;
+            return Balance;
         }
-        public string getName() { //+get name()
-            return this.name;
-        }
-        public string generateID() { //+str create id()
-
-            return "dummy";
-        }
-        public double getBalance() //+get balance
+        public double Withdraw(double amount)
         {
-            return this.balance;
-        }
-        public string getID() //+get id
-        {
-            return this.id;
-        }
-        public bool deposit( double amount) { //+total bool deposit(amount)
-
-            return true;
-        }
-        public bool withdraw(double amount)  //+total bool withdraw(amount)
-        {
-
-            return true;
+            Balance -= amount;
+            return Balance;
         }
     }
 }
